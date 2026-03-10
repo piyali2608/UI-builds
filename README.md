@@ -1,4 +1,4 @@
-## UI-builds 💻 
+## UI-builds 💻 🌐
 UI-builds is my personal frontend playground —
 a space where ideas go from “wait… what if?” to
 “okay wait this actually slaps.🔥”
