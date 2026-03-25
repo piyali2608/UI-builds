@@ -1,0 +1,235 @@
+/* ─── Reset ─────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ─── Theme Variables ────────────────────────────────────────────────────── */
+body.light {
+  --bg:           #fff8f3;
+  --card:         #ffffff;
+  --primary:      #ff6b00;
+  --primary-hover:#e05e00;
+  --text:         #1a1a1a;
+  --subtext:      #666666;
+  --border:       #ffd6b3;
+  --input-bg:     #fff4ec;
+  --input-border: #ffbc8a;
+  --toggle-bg:    #ffe4cc;
+  --role-bg:      #fff4ec;
+  --role-text:    #ff6b00;
+  --link:         #ff6b00;
+  --shadow:       0 8px 40px rgba(255,107,0,0.13);
+}
+
+body.dark {
+  --bg:           #111111;
+  --card:         #1c1c1c;
+  --primary:      #ff6b00;
+  --primary-hover:#ff8533;
+  --text:         #f5f5f5;
+  --subtext:      #aaaaaa;
+  --border:       #2e2e2e;
+  --input-bg:     #242424;
+  --input-border: #3d3d3d;
+  --toggle-bg:    #2a2a2a;
+  --role-bg:      #242424;
+  --role-text:    #ff6b00;
+  --link:         #ff8533;
+  --shadow:       0 8px 40px rgba(0,0,0,0.5);
+}
+
+/* ─── Base ───────────────────────────────────────────────────────────────── */
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  transition: background 0.3s;
+}
+
+/* ─── Layout ─────────────────────────────────────────────────────────────── */
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid var(--border);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+/* ─── Header ─────────────────────────────────────────────────────────────── */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.5px;
+}
+
+.theme-btn {
+  background: var(--toggle-bg);
+  border: none;
+  border-radius: 20px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--primary);
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+/* ─── Title ──────────────────────────────────────────────────────────────── */
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--subtext);
+  margin-bottom: 24px;
+}
+
+/* ─── Role Toggle ────────────────────────────────────────────────────────── */
+.role-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.role-btn {
+  flex: 1;
+  padding: 10px 0;
+  border-radius: 10px;
+  border: 2px solid var(--input-border);
+  background: var(--role-bg);
+  color: var(--role-text);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.role-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+/* ─── Form Fields ────────────────────────────────────────────────────────── */
+.field {
+  margin-bottom: 16px;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--subtext);
+  margin-bottom: 6px;
+}
+
+.field input {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1.5px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s;
+  font-family: inherit;
+}
+
+.field input:focus {
+  border-color: var(--primary);
+}
+
+/* ─── Submit Button ──────────────────────────────────────────────────────── */
+.submit-btn {
+  width: 100%;
+  padding: 13px;
+  border-radius: 12px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 800;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 6px;
+  letter-spacing: 0.3px;
+  transition: background 0.2s, transform 0.1s;
+  font-family: inherit;
+}
+
+.submit-btn:hover  { background: var(--primary-hover); }
+.submit-btn:active { transform: scale(0.98); }
+
+/* ─── Error ──────────────────────────────────────────────────────────────── */
+.error-msg {
+  color: #e03c3c;
+  font-size: 12px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+/* ─── Success ────────────────────────────────────────────────────────────── */
+.success-box {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.go-login-btn {
+  margin-top: 12px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+/* ─── Switch Row ─────────────────────────────────────────────────────────── */
+.switch-row {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 14px;
+  color: var(--subtext);
+}
+
+.switch-link {
+  color: var(--link);
+  font-weight: 700;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 14px;
+  padding: 0;
+  margin-left: 4px;
+  font-family: inherit;
+}

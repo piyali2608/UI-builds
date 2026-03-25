@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CravEX – Your Campus Buddy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ 
+  <div class="wrapper" id="wrapper">
+    <div class="card" id="card">
+ 
+      <!-- Header -->
+      <div class="header">
+        <span class="logo">CravEX</span>
+        <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">🌙 Dark</button>
+      </div>
+ 
+      <!-- Title -->
+      <h1 class="title" id="formTitle">Welcome back</h1>
+      <p class="subtitle" id="formSubtitle">Log in to your CravEX account.</p>
+ 
+      <!-- Role Toggle (signup only) -->
+      <div class="role-row" id="roleRow" style="display:none;">
+        <button class="role-btn active" id="btnStudent" onclick="setRole('student')">🎓 Student</button>
+        <button class="role-btn" id="btnVendor" onclick="setRole('vendor')">🏪 Vendor</button>
+      </div>
+ 
+      <!-- Forms -->
+      <div id="formArea"></div>
+ 
+      <!-- Success -->
+      <div class="success-box" id="successBox" style="display:none;">
+        <span id="successMsg"></span>
+        <br/>
+        <button class="go-login-btn" onclick="goToLogin()">Go to Login</button>
+      </div>
+ 
+      <!-- Switch mode -->
+      <div class="switch-row" id="switchRow">
+        <span id="switchText">Don't have an account?</span>
+        <button class="switch-link" id="switchBtn" onclick="toggleMode()">Sign up</button>
+      </div>
+ 
+    </div>
+  </div>
+ 
+  <script src="app.js"></script>
+</body>
+</html>
