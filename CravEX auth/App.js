@@ -1,13 +1,13 @@
-// ─── State ───────────────────────────────────────────────────────────────────
+// ─── State ──────────────
 let isDark = false;
 let mode   = "login";   // "login" | "signup"
 let role   = "student"; // "student" | "vendor"
 
-// ─── Init ─────────────────────────────────────────────────────────────────────
+// ─── Init ────────────────
 document.body.classList.add("light");
 renderForm();
 
-// ─── Theme Toggle ─────────────────────────────────────────────────────────────
+// ─── Theme Toggle ───────
 function toggleTheme() {
   isDark = !isDark;
   document.body.classList.toggle("light", !isDark);
@@ -15,7 +15,7 @@ function toggleTheme() {
   document.getElementById("themeBtn").textContent = isDark ? "☀ Light" : "🌙 Dark";
 }
 
-// ─── Mode Toggle (login ↔ signup) ─────────────────────────────────────────────
+// ─── Mode Toggle (login ↔ signup) ────────
 function toggleMode() {
   mode = mode === "login" ? "signup" : "login";
   clearSuccess();
@@ -30,7 +30,7 @@ function goToLogin() {
   renderForm();
 }
 
-// ─── Role Toggle ──────────────────────────────────────────────────────────────
+// ─── Role Toggle ──────────────────
 function setRole(r) {
   role = r;
   document.getElementById("btnStudent").classList.toggle("active", role === "student");
@@ -38,7 +38,7 @@ function setRole(r) {
   renderForm(); // re-render to swap "Business Name" ↔ "Student ID"
 }
 
-// ─── Header / subtitle update ─────────────────────────────────────────────────
+// ─── Header / subtitle update ──────────────
 function updateHeader() {
   document.getElementById("formTitle").textContent =
     mode === "login" ? "Welcome back" : "Create account";
@@ -54,7 +54,7 @@ function updateHeader() {
     mode === "login" ? "Sign up" : "Log in";
 }
 
-// ─── Render Form HTML ─────────────────────────────────────────────────────────
+// ─── Render Form HTML ───────
 function renderForm() {
   updateHeader();
   const area = document.getElementById("formArea");
@@ -102,7 +102,7 @@ function renderForm() {
   }
 }
 
-// ─── Login Handler ────────────────────────────────────────────────────────────
+// ─── Login Handler ───────────────
 function handleLogin() {
   const email    = document.getElementById("loginEmail").value.trim();
   const password = document.getElementById("loginPassword").value;
@@ -116,7 +116,7 @@ function handleLogin() {
   showSuccess(`Welcome back, ${email.split("@")[0]}!`);
 }
 
-// ─── Signup Handler ───────────────────────────────────────────────────────────
+// ─── Signup Handler ───────
 function handleSignup() {
   const name     = document.getElementById("signupName").value.trim();
   const extra    = document.getElementById("signupExtra").value.trim();
@@ -135,7 +135,7 @@ function handleSignup() {
   showSuccess(`Account created! Welcome, ${name} 🎉`);
 }
 
-// ─── Helpers ──────────────────────────────────────────────────────────────────
+// ─── Helpers ─────────────────
 function showError(el, msg) {
   el.textContent    = "⚠ " + msg;
   el.style.display  = "block";
